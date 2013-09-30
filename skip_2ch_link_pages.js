@@ -2,6 +2,8 @@
 // @name        Skip 2ch link pages
 // @namespace   http://idaemons.org/
 // @description Skip 2ch link pages.
+// @downloadURL https://userscripts.org/scripts/source/178704.user.js
+// @updateURL   http://userscripts.org/scripts/source/178704.meta.js
 // @include     http://2ch-c.net/?gt=*
 // @include     http://a.anipo.jp/c/rss/*
 // @include     http://besttrendnews.net/archives/*.html
@@ -20,7 +22,10 @@
 // @include     http://suomi-neito.com/pickup/archive/*.html
 // @include     http://uhouho2ch.com/*/*.html
 // @grant       none
-// @version     1
+// @license     2-clause BSDL
+// @homepage    https://userscripts.org/scripts/show/178704
+// @homepage    https://github.com/knu/userjs-skip_2ch_link_pages
+// @version     1.0
 // ==/UserScript==
 
 (function () {
