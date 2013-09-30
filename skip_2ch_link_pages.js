@@ -2,6 +2,7 @@
 // @name        Skip 2ch link pages
 // @namespace   http://idaemons.org/
 // @description Skip 2ch link pages.
+// @author      Akinori MUSHA
 // @downloadURL https://userscripts.org/scripts/source/178704.user.js
 // @updateURL   http://userscripts.org/scripts/source/178704.meta.js
 // @include     http://2ch-c.net/?gt=*
@@ -25,7 +26,7 @@
 // @license     2-clause BSDL
 // @homepage    https://userscripts.org/scripts/show/178704
 // @homepage    https://github.com/knu/userjs-skip_2ch_link_pages
-// @version     1.0
+// @version     1.0.1
 // ==/UserScript==
 
 (function () {
