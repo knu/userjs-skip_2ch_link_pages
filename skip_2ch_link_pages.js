@@ -14,6 +14,7 @@
 // @include     http://konowaro.net/archives/*.html
 // @include     http://matomeantena.com/feed/*
 // @include     http://matometatta-news.net/archives/*.html
+// @include     http://matomeume.com/?rs=*
 // @include     http://moudamepo.com/pick.cgi?code=*
 // @include     http://newmofu.doorblog.jp/archives/*.html*
 // @include     http://newpuru.doorblog.jp/archives/*.html*
@@ -112,6 +113,9 @@
       case 'get2ch.net':
       case 'moudamepo.com':
         byXPath('//a[boolean(ancestor-or-self::*[contains(concat(" ", @class), " pickup")])]/@href');
+        break;
+      case 'matomeume.com':
+        byQuery('#result1 a');
         break;
       default:
         var root = location.protocol + '//' + location.host + '/';
