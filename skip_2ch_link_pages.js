@@ -31,9 +31,10 @@
 // ==/UserScript==
 
 (function () {
+    var done = false;
     var try_redirect_1 = function (proc) {
         var url, exc;
-        if (url = proc()) {
+        if (!done && (url = proc())) {
             try {
                 if (url.match(/^https?:\/\//)) {
                     location.href = url;
@@ -44,6 +45,7 @@
                     document.body.appendChild(element);
                     element.click();
                 }
+                done = true;
                 return true;
             } catch (exc) {}
         }
@@ -52,11 +54,11 @@
         if (!try_redirect_1(proc)) {
             var id = setInterval(function () {
                 if (!try_redirect_1(proc)) {
-                    if (++failures >= 30) {
-                        alert('pickup not found.');
-                        clearInterval(id);
-                    }
+                    if (++failures < 30)
+                        return;
+                    alert('pickup not found.');
                 }
+                clearInterval(id);
             }, 1000);
         }
         return false;
