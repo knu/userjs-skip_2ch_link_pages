@@ -20,6 +20,7 @@
 // @include     http://newmofu.doorblog.jp/archives/*.html*
 // @include     http://newpuru.doorblog.jp/archives/*.html*
 // @include     http://news-choice.net/archives/*.html
+// @include     http://news-select.net/archives/*.html
 // @include     http://newser.cc/date-*.html?order=link&ni=*
 // @include     http://nullpoantenna.com/feed/*
 // @include     http://overseas.antenam.info/items/view/*
