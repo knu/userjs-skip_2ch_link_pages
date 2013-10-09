@@ -103,8 +103,8 @@
             return 'concat(' + args.join(', ') + ')';
         }
     }, xpathStartsWith = function (target, prefix) {
-        return xpathAnd('string-length(' + prefix + ') >= 3',
-                        'starts-with(normalize-space(' + target + '), ' + prefix + ')');
+        return xpathAnd('string-length(normalize-space(' + prefix + ')) >= 3',
+                        'starts-with(normalize-space(' + target + '), normalize-space(' + prefix + '))');
     };
 
     switch (location.host) {
