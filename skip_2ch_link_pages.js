@@ -137,6 +137,8 @@
             byXPath('//a[' +
                     xpathAnd(xpathOr(xpathStartsWith(xpath, '@title'),
                                      'boolean(descendant-or-self::text()[' + xpathStartsWith(xpath, '.') + '])'),
+                             xpathOr(xpathStartsWith('@href', xpathString('http://')),
+                                     xpathStartsWith('@href', xpathString('https://'))),
                              xpathNot(xpathStartsWith('@href', xpathString(root))),
                              xpathNot('boolean(ancestor::h1)'),
                              xpathNot('boolean(ancestor::h2)')) +
