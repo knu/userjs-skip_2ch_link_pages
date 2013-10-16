@@ -32,7 +32,7 @@
 // @license     2-clause BSDL
 // @homepage    https://userscripts.org/scripts/show/178704
 // @homepage    https://github.com/knu/userjs-skip_2ch_link_pages
-// @version     1.0.4
+// @version     1.0.5
 // ==/UserScript==
 
 (function () {
