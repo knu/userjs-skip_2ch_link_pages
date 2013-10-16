@@ -10,6 +10,7 @@
 // @include     http://baseball-mag.net/?id=*
 // @include     http://besttrendnews.net/archives/*.html
 // @include     http://blog-news.doorblog.jp/archives/*.html*
+// @include     http://blog-ranking.doorblog.jp/archives/*.html
 // @include     http://get2ch.net/?*
 // @include     http://katuru.com/rss/*.html
 // @include     http://konowaro.net/archives/*.html
