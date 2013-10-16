@@ -109,8 +109,13 @@
             return 'concat(' + args.join(', ') + ')';
         }
     }, xpathStartsWith = function (target, prefix) {
-        return xpathAnd('string-length(normalize-space(' + prefix + ')) >= 3',
-                        'starts-with(normalize-space(' + target + '), normalize-space(' + prefix + '))');
+        return 'starts-with(' + target + ', ' + prefix + ')';
+    }, xpathEndsWith = function (target, suffix) {
+        return target + ' = concat(substring-before(' + target + ', ' + suffix + '), ' + suffix + ')';
+    }, xpathUsedIn = function (target, substring) {
+        return xpathAnd('string-length(normalize-space(' + substring + ')) >= 3',
+                        xpathOr(xpathStartsWith('normalize-space(' + target + ')', 'normalize-space(' + substring + ')'),
+                                xpathEndsWith('normalize-space(' + target + ')', 'normalize-space(' + substring + ')')));
     };
 
     switch (location.host) {
@@ -139,8 +144,8 @@
           '//h2//a/text()'
         ].forEach(function (xpath) {
             byXPath('//a[' +
-                    xpathAnd(xpathOr(xpathStartsWith(xpath, '@title'),
-                                     'boolean(descendant-or-self::text()[' + xpathStartsWith(xpath, '.') + '])'),
+                    xpathAnd(xpathOr(xpathUsedIn(xpath, '@title'),
+                                     'boolean(descendant-or-self::text()[' + xpathUsedIn(xpath, '.') + '])'),
                              xpathOr(xpathStartsWith('@href', xpathString('http://')),
                                      xpathStartsWith('@href', xpathString('https://'))),
                              xpathNot(xpathStartsWith('@href', xpathString(root))),
