@@ -73,10 +73,13 @@
             return element[property || 'href'];
         });
     }, evalXPath = function (query) {
-        return document.evaluate(query, document, null, 2, null).stringValue;
-        // var value = document.evaluate(query, document, null, 2, null).stringValue;
-        // alert([query, value]);
-        // return value;
+        var e;
+        try {
+            return document.evaluate(query, document, null, 2, null).stringValue;
+        } catch (e) {
+            alert(e + ": " + query);
+            throw e;
+        }
     }, byXPath = function (query) {
         try_redirect(function () {
             return evalXPath(query);
