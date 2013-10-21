@@ -6,6 +6,7 @@
 // @downloadURL https://userscripts.org/scripts/source/178704.user.js
 // @updateURL   http://userscripts.org/scripts/source/178704.meta.js
 // @include     http://2ch-c.net/?gt=*
+// @include     http://2ch-matome.net/pickup/*/
 // @include     http://a.anipo.jp/c/rss/*
 // @include     http://baseball-mag.net/?id=*
 // @include     http://besttrendnews.net/archives/*.html
