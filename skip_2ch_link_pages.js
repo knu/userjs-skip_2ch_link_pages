@@ -146,8 +146,8 @@
           '//h2//a/text()'
         ].forEach(function (xpath) {
             byXPath('//a[' +
-                    xpathAnd(xpathOr(xpathUsedIn(xpath, '@title'),
-                                     'boolean(descendant-or-self::text()[' + xpathUsedIn(xpath, '.') + '])'),
+                    xpathAnd(xpathOr(xpathUsedIn(xpath, 'substring(@title, 1, 60)'),
+                                     'boolean(descendant-or-self::text()[' + xpathUsedIn(xpath, 'substring(., 1, 60)') + '])'),
                              xpathOr(xpathStartsWith('@href', xpathString('http://')),
                                      xpathStartsWith('@href', xpathString('https://'))),
                              xpathNot(xpathStartsWith('@href', xpathString(root))),
