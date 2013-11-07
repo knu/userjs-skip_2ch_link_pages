@@ -15,6 +15,7 @@
 // @include     http://blog-ranking.doorblog.jp/archives/*.html
 // @include     http://get2ch.net/?*
 // @include     http://katuru.com/rss/*.html
+// @include     http://kita-kore.com/archives/*.html
 // @include     http://konowaro.net/archives/*.html
 // @include     http://matomeantena.com/feed/*
 // @include     http://matometatta-news.net/archives/*.html
