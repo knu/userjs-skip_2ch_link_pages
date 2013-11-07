@@ -112,6 +112,8 @@
           default:
             return 'concat(' + args.join(', ') + ')';
         }
+    }, xpathContains = function (target, substring) {
+        return 'contains(' + target + ', ' + substring + ')';
     }, xpathStartsWith = function (target, prefix) {
         return 'starts-with(' + target + ', ' + prefix + ')';
     }, xpathEndsWith = function (target, suffix) {
@@ -150,8 +152,8 @@
             byXPath('//a[' +
                     xpathAnd(xpathOr(xpathUsedIn(xpath, 'substring(@title, 1, 60)'),
                                      'boolean(descendant-or-self::text()[' + xpathUsedIn(xpath, 'substring(., 1, 60)') + '])'),
-                             xpathOr(xpathStartsWith('@href', xpathString('http://')),
-                                     xpathStartsWith('@href', xpathString('https://'))),
+                             xpathOr(xpathContains('@href', xpathString('http://')),
+                                     xpathContains('@href', xpathString('https://'))),
                              xpathNot(xpathStartsWith('@href', xpathString(root))),
                              xpathNot('boolean(ancestor::h1)'),
                              xpathNot('boolean(ancestor::h2)')) +
