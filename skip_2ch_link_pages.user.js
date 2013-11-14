@@ -1,4 +1,4 @@
-// -*- coding: utf-8-unix -*-
+// -*- coding: utf-8-dos -*-
 // ==UserScript==
 // @name        Skip 2ch link pages
 // @namespace   http://idaemons.org/
