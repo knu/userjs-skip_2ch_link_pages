@@ -18,6 +18,7 @@
 // @include     http://kita-kore.com/archives/*.html
 // @include     http://konowaro.net/archives/*.html
 // @include     http://matomeantena.com/feed/*
+// @include     http://matomesakura.com/?rs=*
 // @include     http://matometatta-news.net/archives/*.html
 // @include     http://matomeume.com/?rs=*
 // @include     http://moudamepo.com/pick.cgi?code=*
@@ -133,6 +134,9 @@
       case 'get2ch.net':
       case 'moudamepo.com':
         byXPath('//a[boolean(ancestor-or-self::*[contains(concat(" ", @class), " pickup")])]/@href');
+        break;
+      case 'matomesakura.com':
+        byXPath('(//text()[contains(., "PICK UP")]/following-sibling::a)[1]/@href');
         break;
       case 'matomeume.com':
         byQuery('#result1 a');
