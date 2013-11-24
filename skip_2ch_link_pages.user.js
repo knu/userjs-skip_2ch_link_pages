@@ -14,6 +14,7 @@
 // @include     http://blog-news.doorblog.jp/archives/*.html*
 // @include     http://blog-ranking.doorblog.jp/archives/*.html
 // @include     http://get2ch.net/?*
+// @include     http://gurugurulog.com/archives/*.html*
 // @include     http://katuru.com/rss/*.html
 // @include     http://kita-kore.com/archives/*.html
 // @include     http://konowaro.net/archives/*.html
@@ -157,7 +158,9 @@
                     xpathAnd(xpathOr(xpathUsedIn(xpath, 'substring(@title, 1, 60)'),
                                      'boolean(descendant-or-self::text()[' + xpathUsedIn(xpath, 'substring(., 1, 60)') + '])'),
                              xpathOr(xpathContains('@href', xpathString('http://')),
-                                     xpathContains('@href', xpathString('https://'))),
+                                     xpathContains('@href', xpathString('https://')),
+                                     xpathStartsWith('@href', xpathString('/items/click/')) // overseas.antenam.info
+                                    ),
                              xpathNot(xpathStartsWith('@href', xpathString(root))),
                              xpathNot('boolean(ancestor::h1)'),
                              xpathNot('boolean(ancestor::h2)')) +
