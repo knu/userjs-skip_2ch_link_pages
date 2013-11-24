@@ -22,6 +22,7 @@
 // @include     http://matomesakura.com/?rs=*
 // @include     http://matometatta-news.net/archives/*.html
 // @include     http://matomeume.com/?rs=*
+// @include     http://rotco.jp/rss/*
 // @include     http://moudamepo.com/pick.cgi?code=*
 // @include     http://newmofu.doorblog.jp/archives/*.html*
 // @include     http://newpuru.doorblog.jp/archives/*.html*
@@ -33,7 +34,7 @@
 // @include     http://newyaku.blog.fc2.com/blog-entry-*.html
 // @include     http://nullpoantenna.com/feed/*
 // @include     http://overseas.antenam.info/items/view/*
-// @include     http://suomi-neito.com/pickup/archive/*.html
+// @include     http://suomi-neito.com/*/archive/*.html*
 // @include     http://uhouho2ch.com/*/*.html
 // @grant       none
 // @license     2-clause BSDL
@@ -177,8 +178,9 @@
                                   var href = a.href; // resolved URL
 
                                   // overseas.antenam.info: /items/click/123
+                                  // rotco.jp: ../link/123
                                   // suomi-neito.com: /out/123
-                                  if (href.match(/\/(click|out)\/[0-9]+$/))
+                                  if (href.match(/\/(click|link|out)\/[0-9]+$/))
                                       return href;
 
                                   if (href.lastIndexOf(root, 0) != 0)
