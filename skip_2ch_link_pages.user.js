@@ -48,15 +48,11 @@
         var url, exc;
         if (!done && (url = proc())) {
             try {
-                if (url.match(/^https?:\/\//)) {
-                    location.href = url;
-                } else {
-                    var element = document.createElement('a');
-                    element.setAttribute('href', url);
-                    element.appendChild(document.createTextNode('Link'));
-                    document.body.appendChild(element);
-                    element.click();
-                }
+                var element = document.createElement('a');
+                element.setAttribute('href', url);
+                element.appendChild(document.createTextNode('Link'));
+                document.body.appendChild(element);
+                element.click();
                 done = true;
                 return true;
             } catch (exc) {}
