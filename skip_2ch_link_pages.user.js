@@ -28,6 +28,7 @@
 // @include     http://news-select.net/archives/*.html
 // @include     http://news-three-stars.net/archives/*.html
 // @include     http://newser.cc/date-*.html?order=link&ni=*
+// @include     http://newyaku.blog.fc2.com/?c=pickup&id=*
 // @include     http://newyaku.blog.fc2.com/blog-entry-*.html
 // @include     http://nullpoantenna.com/feed/*
 // @include     http://overseas.antenam.info/items/view/*
