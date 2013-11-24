@@ -138,10 +138,8 @@
         byXPath('//a[boolean(ancestor-or-self::*[contains(concat(" ", @class), " pickup")])]/@href');
         break;
       case 'matomesakura.com':
-        byXPath('(//text()[contains(., "PICK UP")]/following-sibling::a)[1]/@href');
-        break;
       case 'matomeume.com':
-        byQuery('#result1 a');
+        byXPath('(//text()[contains(., "PICK UP")]/following-sibling::a)[1]/@href');
         break;
       case 'newser.cc':
         byQuery('.news-link a[style]');
