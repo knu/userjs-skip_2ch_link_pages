@@ -76,7 +76,20 @@
             if (!element) return null;
             return element[property || 'href'];
         });
-    }, evalXPath = function (query) {
+    }, evalXPathFirst = function (query, proc) {
+        var e, result, i, x;
+        try {
+             result = document.evaluate(query, document, null, 5, null);
+        } catch (e) {
+            alert(e + ": " + query);
+            throw e;
+        }
+        while ((i = result.iterateNext())) {
+            if ((x = proc(i)))
+                return x;
+        }
+        return null;
+    }, evalXPathToString = function (query) {
         var e;
         try {
             return document.evaluate(query, document, null, 2, null).stringValue;
@@ -86,7 +99,11 @@
         }
     }, byXPath = function (query) {
         try_redirect(function () {
-            return evalXPath(query);
+            return evalXPathToString(query);
+        });
+    }, byXPathFirst = function (query, proc) {
+        try_redirect(function () {
+            return evalXPathFirst(query, proc);
         });
     }, xpathAnd = function () {
         var args = Array.prototype.slice.call(arguments);
@@ -143,6 +160,7 @@
         break;
       default:
         var root = location.protocol + '//' + location.host + '/';
+
         [
           '//title/text()',
           '//h1//a/@title',
@@ -150,17 +168,24 @@
           '//h2//a/@title',
           '//h2//a/text()'
         ].forEach(function (xpath) {
-            byXPath('//a[' +
-                    xpathAnd(xpathOr(xpathUsedIn(xpath, 'substring(@title, 1, 60)'),
-                                     'boolean(descendant-or-self::text()[' + xpathUsedIn(xpath, 'substring(., 1, 60)') + '])'),
-                             xpathOr(xpathContains('@href', xpathString('http://')),
-                                     xpathContains('@href', xpathString('https://')),
-                                     xpathStartsWith('@href', xpathString('/items/click/')) // overseas.antenam.info
-                                    ),
-                             xpathNot(xpathStartsWith('@href', xpathString(root))),
-                             xpathNot('boolean(ancestor::h1)'),
-                             xpathNot('boolean(ancestor::h2)')) +
-                    ']/@href');
+            byXPathFirst('//a[' +
+                         xpathAnd(xpathOr(xpathUsedIn(xpath, 'substring(@title, 1, 30)'),
+                                          'boolean(descendant-or-self::text()[' + xpathUsedIn(xpath, 'substring(., 1, 30)') + '])'),
+                                  xpathNot('boolean(ancestor::h1)'),
+                                  xpathNot('boolean(ancestor::h2)')) +
+                         ']', function (a) {
+                                  var href = a.href; // resolved URL
+
+                                  // overseas.antenam.info: /items/click/123
+                                  // suomi-neito.com: /out/123
+                                  if (href.match(/\/(click|out)\/[0-9]+$/))
+                                      return href;
+
+                                  if (href.lastIndexOf(root, 0) != 0)
+                                      return href;
+
+                                  return null;
+                              });
         });
         break;
     }
