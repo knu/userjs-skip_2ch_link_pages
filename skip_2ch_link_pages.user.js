@@ -152,6 +152,9 @@
       case 'moudamepo.com':
         byXPath('//a[boolean(ancestor-or-self::*[contains(concat(" ", @class), " pickup")])]/@href');
         break;
+      case 'konowaro.net':
+        byQuery('.pickuplink.selected a');
+        break;
       case 'matomesakura.com':
       case 'matomeume.com':
         byXPath('(//text()[contains(., "PICK UP")]/following-sibling::a)[1]/@href');
