@@ -37,6 +37,7 @@
 // @include     http://overseas.antenam.info/items/view/*
 // @include     http://suomi-neito.com/*/archive/*.html*
 // @include     http://uhouho2ch.com/*/*.html
+// @include     http://www.antennash.com/?pick=*
 // @grant       none
 // @license     2-clause BSDL
 // @homepage    https://userscripts.org/scripts/show/178704
