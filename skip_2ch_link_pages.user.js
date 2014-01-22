@@ -13,6 +13,7 @@
 // @include     http://besttrendnews.net/archives/*.html
 // @include     http://blog-news.doorblog.jp/archives/*.html*
 // @include     http://blog-ranking.doorblog.jp/archives/*.html
+// @include     http://ga-t.net/rss/*
 // @include     http://get2ch.net/?*
 // @include     http://gurugurulog.com/archives/*.html*
 // @include     http://katuru.com/rss/*.html
@@ -180,10 +181,11 @@
                          ']', function (a) {
                                   var href = a.href; // resolved URL
 
+                                  // ga-t.net: /count/123
                                   // overseas.antenam.info: /items/click/123
                                   // rotco.jp: ../link/123
                                   // suomi-neito.com: /out/123
-                                  if (href.match(/\/(click|link|out)\/[0-9]+$/))
+                                  if (href.match(/\/(click|count|link|out)\/[0-9]+$/))
                                       return href;
 
                                   if (href.lastIndexOf(root, 0) != 0)
