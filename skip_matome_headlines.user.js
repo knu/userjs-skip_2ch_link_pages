@@ -1,8 +1,8 @@
 // -*- coding: utf-8-dos -*-
 // ==UserScript==
-// @name        Skip 2ch link pages
+// @name        Skip matome headlines
 // @namespace   http://idaemons.org/
-// @description Skip 2ch link pages.
+// @description Skip headline-only pages of meta matome sites.
 // @author      Akinori MUSHA
 // @downloadURL https://userscripts.org/scripts/source/178704.user.js
 // @updateURL   http://userscripts.org/scripts/source/178704.meta.js
