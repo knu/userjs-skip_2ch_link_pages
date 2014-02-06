@@ -43,7 +43,7 @@
 // @license     2-clause BSDL
 // @homepage    https://userscripts.org/scripts/show/178704
 // @homepage    https://github.com/knu/userjs-skip_matome_headlines
-// @version     1.0.10
+// @version     1.0.11
 // ==/UserScript==
 
 (function () {
