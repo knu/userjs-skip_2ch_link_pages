@@ -23,6 +23,7 @@
 // @include     http://matomesakura.com/?rs=*
 // @include     http://matometatta-news.net/archives/*.html
 // @include     http://matomeume.com/?rs=*
+// @include     http://mosi2ch.net/rss.php?d=*
 // @include     http://rotco.jp/rss/*
 // @include     http://moudamepo.com/pick.cgi?code=*
 // @include     http://newmofu.doorblog.jp/archives/*.html*
