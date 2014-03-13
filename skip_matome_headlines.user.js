@@ -153,6 +153,9 @@
             byQuery('tr[eid="' + RegExp.$1 + '"] th a[name="title"]');
         }
         break;
+      case 'besttrendnews.net':
+        byQuery('.pickuplink.select a');
+        break;
       case 'get2ch.net':
       case 'moudamepo.com':
         byXPath('//a[boolean(ancestor-or-self::*[contains(concat(" ", @class), " pickup")])]/@href');
