@@ -36,6 +36,7 @@
 // @include     http://news-select.net/archives/*.html
 // @include     http://news-three-stars.net/archives/*.html
 // @include     http://newser.cc/date-*.html?order=link&ni=*
+// @include     http://newspickup.com/archives/*.html
 // @include     http://nullpoantenna.com/feed/*
 // @include     http://rotco.jp/rss/*
 // @include     http://suomi-neito.com/*/archive/*.html*
