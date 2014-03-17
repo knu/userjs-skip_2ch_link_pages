@@ -65,7 +65,9 @@
         }
         return false;
     }, failures = 0, try_redirect = function (proc) {
-        if (!try_redirect_1(proc)) {
+        if (try_redirect_1(proc)) {
+            return true;
+        } else {
             var id = setInterval(function () {
                 if (!try_redirect_1(proc)) {
                     if (++failures < 30)
@@ -74,8 +76,8 @@
                 }
                 clearInterval(id);
             }, 1000);
+            return false;
         }
-        return false;
     }, byQuery = function (query, property) {
         try_redirect(function () {
             var element = document.querySelector(query);
