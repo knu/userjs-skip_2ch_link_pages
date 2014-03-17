@@ -72,7 +72,7 @@
                 if (!try_redirect_1(proc)) {
                     if (++failures < 30)
                         return;
-                    alert('pickup not found.');
+                    console.log('pickup not found.');
                 }
                 clearInterval(id);
             }, 1000);
