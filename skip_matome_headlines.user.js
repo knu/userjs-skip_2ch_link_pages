@@ -7,6 +7,7 @@
 // @downloadURL https://userscripts.org/scripts/source/178704.user.js
 // @updateURL   http://userscripts.org/scripts/source/178704.meta.js
 // @include     http://2ch-c.net/?gt=*
+// @include     http://2ch-matome.com/pickup/*/*
 // @include     http://2ch-matome.net/pickup/*/
 // @include     http://a.anipo.jp/c/rss/*
 // @include     http://overseas.antenam.info/items/view/*
@@ -158,9 +159,11 @@
       case 'besttrendnews.net':
         byQuery('.pickuplink.select a');
         break;
+      case '2ch-matome.com':
       case 'get2ch.net':
       case 'moudamepo.com':
-        byXPath('//a[boolean(ancestor-or-self::*[contains(concat(" ", @class), " pickup")])]/@href');
+        byXPath('//a[boolean(descendant-or-self::*[contains(concat(" ", @class), " pickup")])]/@href') ||
+            byXPath('//a[boolean(ancestor-or-self::*[contains(concat(" ", @class), " pickup")])]/@href');
         break;
       case 'konowaro.net':
         byQuery('.pickuplink.selected a');
