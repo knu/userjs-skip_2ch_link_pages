@@ -29,6 +29,7 @@
 // @include     http://konowaro.net/archives/*.html
 // @include     http://matomeantena.com/feed/*
 // @include     http://matomesakura.com/?rs=*
+// @include     http://matomesakura.com/fix/?*
 // @include     http://matometatta-news.net/archives/*.html
 // @include     http://matomeume.com/?rs=*
 // @include     http://mosi2ch.net/rss.php?d=*
