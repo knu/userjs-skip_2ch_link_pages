@@ -148,10 +148,8 @@
         return 'starts-with(' + target + ', ' + prefix + ')';
     }, xpathEndsWith = function (target, suffix) {
         return target + ' = concat(substring-before(' + target + ', ' + suffix + '), ' + suffix + ')';
-    }, xpathUsedIn = function (target, substring) {
-        return xpathAnd('string-length(normalize-space(' + substring + ')) >= 3',
-                        xpathOr(xpathStartsWith('normalize-space(' + target + ')', 'normalize-space(' + substring + ')'),
-                                xpathEndsWith('normalize-space(' + target + ')', 'normalize-space(' + substring + ')')));
+    }, normalizeSpace = function (string) {
+        return string.replace(/(?:^\s+|\s+$)/g, '').replace(/\s+/g, ' ');
     };
 
     var m;
@@ -196,30 +194,58 @@
       default:
         var root = location.protocol + '//' + location.host + '/';
 
+        var checkLink = function (url) {
+            if (url == null)
+                return null;
+
+            // ga-t.net: /count/123
+            // overseas.antenam.info: /items/click/123
+            // rotco.jp: ../link/123
+            // suomi-neito.com: /out/123
+            if (url.match(/\/(click|count|link|out)\/[0-9]+$/))
+                return url;
+
+            if (url.lastIndexOf(root, 0) != 0)
+                return url;
+
+            return null;
+        };
+
+        var checkCaption = function (caption, title) {
+            if (caption == null)
+                return false;
+
+            caption = normalizeSpace(caption).replace(/[….]+$/, '');
+
+            if (caption < 3)
+                return false;
+
+            caption = caption.substring(0, 30);
+            title = normalizeSpace(title);
+
+            return title.indexOf(caption) == 0;
+        };
+
         [
-          '//title/text()',
-          '//h1//a/@title',
-          '//h1//a/text()',
-          '//h2//a/@title',
-          '//h2//a/text()'
-        ].forEach(function (xpath) {
+            function () { return document.title },
+            function () { return evalXPathToString('//h1//a/@title') },
+            function () { return evalXPathToString('//h1//a/text()') },
+            function () { return evalXPathToString('//h2//a/@title') },
+            function () { return evalXPathToString('//h2//a/text()') }
+        ].forEach(function (func) {
+            var title = func();
             byXPathFirst('//a[' +
-                         xpathAnd(xpathOr(xpathUsedIn(xpath, 'substring(@title, 1, 30)'),
-                                          'boolean(descendant-or-self::text()[' + xpathUsedIn(xpath, 'substring(., 1, 30)') + '])'),
+                         xpathAnd('@href',
                                   xpathNot('boolean(ancestor::h1)'),
                                   xpathNot('boolean(ancestor::h2)')) +
                          ']', function (a) {
-                                  var href = a.href; // resolved URL
-
-                                  // ga-t.net: /count/123
-                                  // overseas.antenam.info: /items/click/123
-                                  // rotco.jp: ../link/123
-                                  // suomi-neito.com: /out/123
-                                  if (href.match(/\/(click|count|link|out)\/[0-9]+$/))
-                                      return href;
-
-                                  if (href.lastIndexOf(root, 0) != 0)
-                                      return href;
+                                  if ((checkCaption(a.title, title) ||
+                                       evalXPathFirst('descendant-or-self::text()', a, function (text) {
+                                           return checkCaption(text.textContent, title)
+                                       })) &&
+                                      checkLink(a.href)) {
+                                      return a.href;
+                                  }
 
                                   return null;
                               });
