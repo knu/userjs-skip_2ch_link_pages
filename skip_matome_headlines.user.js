@@ -85,10 +85,14 @@
             if (!element) return null;
             return element[property || 'href'];
         });
-    }, evalXPathFirst = function (query, proc) {
+    }, evalXPathFirst = function (query, node, proc) {
+        if (proc == null) {
+            proc = node;
+            node = document;
+        }
         var e, result, i, x;
         try {
-             result = document.evaluate(query, document, null, 5, null);
+             result = document.evaluate(query, node, null, 5, null);
         } catch (e) {
             alert(e + ": " + query);
             throw e;
