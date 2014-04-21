@@ -154,6 +154,20 @@
                                 xpathEndsWith('normalize-space(' + target + ')', 'normalize-space(' + substring + ')')));
     };
 
+    var m;
+
+    if ((m = location.search.match(/[?&]url=([^&]+)/))) {
+        var url = decodeURIComponent(m[1]);
+        if (url.match(/^https?:\/\//)) {
+            location.href = url;
+            return;
+        } else if (url.match(/\/\/:s?ptth$/)) {
+            url = url.split('').reverse().join('');
+            location.href = url;
+            return;
+        }
+    }
+
     switch (location.host) {
       case 'a.anipo.jp':
         if (location.pathname.match(/([0-9]+)$/)) {
