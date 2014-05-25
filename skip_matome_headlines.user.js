@@ -9,6 +9,7 @@
 // @include     http://2ch-c.net/?gt=*
 // @include     http://2ch-matome.com/pickup/*/*
 // @include     http://2ch-matome.net/pickup/*/
+// @include     http://2chnavi.net/headline/*
 // @include     http://a.anipo.jp/c/rss/*
 // @include     http://overseas.antenam.info/items/view/*
 // @include     http://www.antennash.com/?pick=*
