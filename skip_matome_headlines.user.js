@@ -224,7 +224,7 @@
             caption = caption.substring(0, 30);
             title = normalizeSpace(title);
 
-            return title.indexOf(caption) == 0;
+            return title.indexOf(caption) >= 0;
         };
 
         [
