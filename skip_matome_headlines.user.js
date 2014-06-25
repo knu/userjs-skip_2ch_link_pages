@@ -4,8 +4,8 @@
 // @namespace   http://idaemons.org/
 // @description Skip headline-only pages of meta matome sites.
 // @author      Akinori MUSHA
-// @downloadURL https://userscripts.org/scripts/source/178704.user.js
-// @updateURL   http://userscripts.org/scripts/source/178704.meta.js
+// @downloadURL https://greasyfork.org/scripts/2795-skip-matome-headlines/code/Skip%20matome%20headlines.user.js
+// @updateURL   https://greasyfork.org/scripts/2795-skip-matome-headlines/code/Skip%20matome%20headlines.meta.js
 // @include     http://2ch-c.net/?gt=*
 // @include     http://2ch-matome.com/pickup/*/*
 // @include     http://2ch-matome.net/pickup/*/
@@ -49,7 +49,7 @@
 // @license     2-clause BSDL
 // @homepage    https://userscripts.org/scripts/show/178704
 // @homepage    https://github.com/knu/userjs-skip_matome_headlines
-// @version     1.0.14
+// @version     1.0.15
 // ==/UserScript==
 
 (function () {
