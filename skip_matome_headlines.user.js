@@ -47,7 +47,7 @@
 // @include     http://uhouho2ch.com/*/*.html
 // @grant       none
 // @license     2-clause BSDL
-// @homepage    https://userscripts.org/scripts/show/178704
+// @homepage    https://greasyfork.org/scripts/2795-skip-matome-headlines
 // @homepage    https://github.com/knu/userjs-skip_matome_headlines
 // @version     1.0.15
 // ==/UserScript==
