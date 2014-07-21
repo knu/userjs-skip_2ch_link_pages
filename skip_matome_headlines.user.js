@@ -16,6 +16,7 @@
 // @include     http://www.antennash.com/?pick=*
 // @include     http://baseball-mag.net/?id=*
 // @include     http://besttrendnews.net/archives/*.html
+// @include     http://digital-soccer.net/?pid=*
 // @include     http://blog-news.doorblog.jp/archives/*.html*
 // @include     http://blog-ranking.doorblog.jp/archives/*.html
 // @include     http://newmofu.doorblog.jp/archives/*.html*
