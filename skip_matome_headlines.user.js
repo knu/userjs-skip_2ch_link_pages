@@ -32,6 +32,7 @@
 // @include     http://kita-kore.com/archives/*.html
 // @include     http://konowaro.net/archives/*.html
 // @include     http://matomeantena.com/feed/*
+// @include     http://matomeja.jp/feed/*/?*
 // @include     http://matomesakura.com/?rs=*
 // @include     http://matomesakura.com/fix/?*
 // @include     http://matometatta-news.net/archives/*.html
