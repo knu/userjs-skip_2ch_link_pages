@@ -195,7 +195,7 @@
         byXPath('(//text()[contains(., "PICK UP")]/following-sibling::a)[1]/@href');
         break;
       case 'newser.cc':
-        byQuery('.news-link a[style]');
+        byQuery('.target .news-link a[href]');
         break;
       default:
         var root = location.protocol + '//' + location.host + '/';
