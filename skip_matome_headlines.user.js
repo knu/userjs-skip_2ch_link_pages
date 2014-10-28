@@ -25,6 +25,7 @@
 // @include     http://newmofu.doorblog.jp/archives/*.html*
 // @include     http://newpuru.doorblog.jp/archives/*.html*
 // @include     http://news-pod.net/*/?entry=*
+// @include     http://newresu1.blog.fc2.com/?c=pickup&id=*
 // @include     http://newyaku.blog.fc2.com/?c=pickup&id=*
 // @include     http://newyaku.blog.fc2.com/blog-entry-*.html
 // @include     http://afoafodayo.blog84.fc2.com/blog-entry-*.html
