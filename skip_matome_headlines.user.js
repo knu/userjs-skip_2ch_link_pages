@@ -10,12 +10,14 @@
 // @include     http://2ch-c.net/?gt=*
 // @include     http://2ch-matome.com/pickup/*/*
 // @include     http://2ch-matome.net/pickup/*/
+// @include     http://watch2ch.2chblog.jp/archives/*.html*
 // @include     http://2chnavi.net/headline/*
 // @include     http://a.anipo.jp/c/rss/*
 // @include     http://overseas.antenam.info/items/view/*
 // @include     http://www.antennash.com/?pick=*
 // @include     http://baseball-mag.net/?id=*
 // @include     http://besttrendnews.net/archives/*.html
+// @include     http://timely.blog.jp/archives/*.html*
 // @include     http://digital-soccer.net/?pid=*
 // @include     http://blog-news.doorblog.jp/archives/*.html*
 // @include     http://blog-ranking.doorblog.jp/archives/*.html
