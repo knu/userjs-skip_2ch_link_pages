@@ -21,6 +21,7 @@
 // @include     http://digital-soccer.net/?pid=*
 // @include     http://blog-news.doorblog.jp/archives/*.html*
 // @include     http://blog-ranking.doorblog.jp/archives/*.html
+// @include     http://matonew.doorblog.jp/archives/*.html*
 // @include     http://newmofu.doorblog.jp/archives/*.html*
 // @include     http://newpuru.doorblog.jp/archives/*.html*
 // @include     http://news-pod.net/*/?entry=*
