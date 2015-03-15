@@ -184,6 +184,7 @@
         }
         break;
       case 'besttrendnews.net':
+      case 'news-three-stars.net':
         byQuery('.pickuplink.select a');
         break;
       case '2ch-matome.com':
