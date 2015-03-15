@@ -29,6 +29,7 @@
 // @include     http://newyaku.blog.fc2.com/?c=pickup&id=*
 // @include     http://newyaku.blog.fc2.com/blog-entry-*.html
 // @include     http://afoafodayo.blog84.fc2.com/blog-entry-*.html
+// @include     http://vipsister.blog72.fc2.com/blog-entry-*.html
 // @include     http://ga-t.net/rss/*
 // @include     http://get2ch.net/?*
 // @include     http://gurugurulog.com/archives/*.html*
