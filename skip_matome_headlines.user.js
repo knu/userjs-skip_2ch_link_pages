@@ -8,6 +8,7 @@
 // @updateURL   https://greasyfork.org/scripts/2795-skip-matome-headlines/code/Skip%20matome%20headlines.meta.js
 // @include     http://2ch-2.net/feed/*/*
 // @include     http://2ch-c.net/?gt=*
+// @include     http://2ch-matome.com/article/*
 // @include     http://2ch-matome.com/pickup/*/*
 // @include     http://2ch-matome.net/pickup/*/
 // @include     http://watch2ch.2chblog.jp/archives/*.html*
