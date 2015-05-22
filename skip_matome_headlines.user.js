@@ -201,6 +201,11 @@
       case 'matomeume.com':
         byXPath('(//text()[contains(., "PICK UP")]/following-sibling::a)[1]/@href');
         break;
+      case 'nullpoantenna.com':
+        byXPathFirst('//a[@class="feed-click"]/@href', function (href) {
+            return href.value.replace(/\/feed\//, "/feed-click/");
+        });
+        break;
       default:
         var root = location.protocol + '//' + location.host + '/';
 
