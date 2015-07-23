@@ -45,6 +45,7 @@
 // @include     http://matomeume.com/?rs=*
 // @include     http://mosi2ch.net/rss.php?d=*
 // @include     http://moudamepo.com/pick.cgi?code=*
+// @include     http://news-choice.net/2ch/*.html*
 // @include     http://news-choice.net/archives/*.html
 // @include     http://news-select.net/archives/*.html
 // @include     http://news-three-stars.net/archives/*.html
@@ -217,7 +218,8 @@
             // overseas.antenam.info: /items/click/123
             // rotco.jp: ../link/123
             // suomi-neito.com: /out/123
-            if (url.match(/\/(click|count|link|out)\/[0-9]+$/))
+            // news-choice.net: /~host.domain/path...
+            if (url.match(/\/((click|count|link|out)\/[0-9]+$|~.*\..*\/)/))
                 return url;
 
             if (url.lastIndexOf(root, 0) != 0)
