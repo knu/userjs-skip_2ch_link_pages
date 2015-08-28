@@ -59,7 +59,7 @@
 // @license     2-clause BSDL
 // @homepage    https://greasyfork.org/scripts/2795-skip-matome-headlines
 // @homepage    https://github.com/knu/userjs-skip_matome_headlines
-// @version     1.0.18
+// @version     1.0.19
 // ==/UserScript==
 
 (function () {
