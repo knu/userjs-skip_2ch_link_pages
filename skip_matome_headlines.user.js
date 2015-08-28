@@ -219,7 +219,8 @@
             // rotco.jp: ../link/123
             // suomi-neito.com: /out/123
             // news-choice.net: /~host.domain/path...
-            if (url.match(/\/((click|count|link|out)\/[0-9]+$|~.*\..*\/)/))
+            // matomeantena.com: /feed-click/123
+            if (url.match(/\/(((feed-)?click|count|link|out)\/[0-9]+$|~.*\..*\/)/))
                 return url;
 
             if (url.lastIndexOf(root, 0) != 0)
