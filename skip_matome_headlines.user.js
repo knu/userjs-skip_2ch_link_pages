@@ -17,7 +17,7 @@
 // @include     http://overseas.antenam.info/items/view/*
 // @include     http://www.antennash.com/?pick=*
 // @include     http://baseball-mag.net/?id=*
-// @include     http://besttrendnews.net/archives/*.html
+// @include     http://besttrendnews.net/*/*.html
 // @include     http://timely.blog.jp/archives/*.html*
 // @include     http://digital-soccer.net/?pid=*
 // @include     http://blog-news.doorblog.jp/archives/*.html*
@@ -185,7 +185,6 @@
             byQuery('tr[eid="' + RegExp.$1 + '"] th a[name="title"]');
         }
         break;
-      case 'besttrendnews.net':
       case 'news-three-stars.net':
         byQuery('.pickuplink.select a');
         break;
